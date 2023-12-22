@@ -7,7 +7,7 @@
 .yarn/install-state.gz
 
 # secret keys
-src/.env
+.env
 
 # testing
 /coverage
