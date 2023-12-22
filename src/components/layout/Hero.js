@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Right from "@/components/icons/Right";
+import Right from "../icons/Right";
 export default function Hero() {
     return (
         <section className="hero mt-4">
