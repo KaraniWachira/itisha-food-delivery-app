@@ -1,5 +1,6 @@
-import { model, Schema, models } from "mongoose";
 import bcrypt from "bcrypt";
+import { model, Schema, models } from "mongoose";
+
 
 const UserSchema = new Schema({
     email: { type: String, required: true, unique: true },
@@ -7,7 +8,7 @@ const UserSchema = new Schema({
         type: String,
         required: true,
         unique: true,
-        validate: (pass) => {
+        validate: pass => {
             if (!pass?.length || pass.length < 5) {
                 throw new Error('Password must be at least 5 characters');
             }
@@ -20,5 +21,4 @@ UserSchema.post('validate', async function (user) {
     const salt = await bcrypt.genSalt(9);
     user.password = await bcrypt.hash(notHashedPassword, salt);
 });
-
 export const User = models?.User || model('User', UserSchema);
