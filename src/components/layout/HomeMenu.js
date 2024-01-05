@@ -1,6 +1,7 @@
 import Image  from "next/image";
-import MenuItem from "@/components/menu/MenuItem";
-import SectionHeaders from "@/components/layout/SectionHeaders";
+import MenuItem from "/src/components/menu/MenuItem";
+import SectionHeaders from "/src/components/layout/SectionHeaders";
+
 export default function HomeMenu() {
     return(
         <section className="">
